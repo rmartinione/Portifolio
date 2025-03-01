@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação de caracteres para UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Configuração para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título da página -->
+  <title>Gerador de Documentos Técnicos</title>
+  <!-- Link para o arquivo de estilos CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Container principal que envolve todo o conteúdo -->
+  <div class="container">
+    <!-- Título principal da aplicação -->
+    <h1>Gerador de Documentos Técnicos</h1>
+    
+    <!-- Botão para alternar o modo escuro (não padrão) -->
+    <button id="darkModeToggle">Ativar Modo Escuro</button>
+    
+    <!-- Rótulo e seletor para escolher o tipo de documento -->
+    <label for="docType">Selecione o Tipo de Documento:</label>
+    <select id="docType">
+      <option value="">Selecione...</option>
+      <option value="tcc">Trabalho de Conclusão de Curso (TCC)</option>
+      <option value="artigo">Artigo Científico</option>
+      <option value="relatorio">Relatório Técnico</option>
+      <option value="poe">Documento POE</option>
+      <option value="kb">Documento KB</option>
+      <option value="rca">Documento RCA</option>
+    </select>
+    
+    <!-- Área onde os campos do formulário serão gerados dinamicamente -->
+    <div id="formFields"></div>
+    
+    <!-- Botões de ação para gerar, imprimir, exportar e limpar o documento -->
+    <button id="generateBtn">Gerar Documento</button>
+    <button id="printBtn">Imprimir Documento</button>
+    <!-- Botões de exportação para DOCX e ODT -->
+    <button id="exportDocxBtn">Exportar para DOCX</button>
+    <button id="exportOdtBtn">Exportar para ODT</button>
+    <button id="clearBtn">Limpar Documento</button>
+    
+    <!-- Área para exibir mensagens de ação (ex: sucesso ou erro) -->
+    <div id="message" class="message"></div>
+    
+    <!-- Área onde o documento final gerado será exibido -->
+    <div id="documentPreview" class="document-preview"></div>
+  </div>
+  
+  <!-- Inclusão dos scripts JavaScript -->
+  <!-- Biblioteca html-docx.js (certifique-se de ter esta biblioteca) -->
+  <script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.js"></script>
+  <!-- Templates dos documentos -->
+  <script src="js/templates.js"></script>
+  <!-- Lógica principal da aplicação -->
+  <script src="js/script.js"></script>
+  <!-- Funções de exportação para DOCX e ODT -->
+  <script src="js/export.js"></script>
+</body>
+</html>

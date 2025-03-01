@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Organizador de Texto</title>
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contêiner principal da página -->
+    <div class="container">
+        <!-- Título da aplicação -->
+        <h1>Organizador de Texto</h1>
+        <!-- Área de texto para digitar o laudo -->
+        <textarea id="inputText" placeholder="Digite seu laudo aqui..."></textarea>
+        <!-- Div para os botões de organizar e limpar o texto -->
+        <div class="buttons">
+            <!-- Botão para organizar o texto -->
+            <button onclick="organizarTexto()">Organizar</button>
+            <!-- Botão para limpar o texto -->
+            <button onclick="limparTexto()">Limpar</button>
+        </div>
+        <!-- Parágrafo para exibir a mensagem de sucesso/erro -->
+        <p id="mensagem"></p>
+    </div>
+    <!-- Rodapé personalizado -->
+    <div class="rodape">
+        <!-- Texto do rodapé -->
+        <p>© 2025 Rafael Martiniano. Todos os direitos reservados.</p>
+    </div>
+    <!-- Link para o arquivo de scripts JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
