@@ -33,7 +33,6 @@ Além disso, estou praticando as melhores práticas em **controle de versão com
 
 ## Conecte-se Comigo
 
-### LinkedIn
 <a href="https://www.linkedin.com/in/rafael-martiniano?trk=profile-badge" target="_blank" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
 </a>
