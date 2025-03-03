@@ -7,11 +7,11 @@ Tenho grande interesse nas tecnologias de gigantes como **Oracle**, **Microsoft*
 ## Projetos
 
 ### Projeto ONE (Oracle + Alura)
-- [Diretório Alura](https://github.com/rmartinione/Portifolio/tree/portifolio/Alura)
+- [Diretório Curso](https://github.com/rmartinione/Portifolio/tree/portifolio/Alura)
 - Descrição: Projetos realizados durante o curso Alura ONE.
 
 ### Portifolio
-- [Diretório Portifolio](https://github.com/rmartinione/Portifolio/tree/portifolio/Portifolio)
+- [Diretório Portifolio](https://github.com/rmartinione/Portifolio)
 - Descrição: Projetos pessoais e profissionais desenvolvidos.
 
 ### Projetos
