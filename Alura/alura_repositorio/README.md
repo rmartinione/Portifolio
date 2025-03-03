@@ -41,6 +41,8 @@ Além disso, estou praticando as melhores práticas em **controle de versão com
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://rmartinione.github.io/Challenge-AluraOne) 
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
+---
+
 ## 📝 Blog e Artigos
 
 Nesta seção, gostaria de compartilhar um pouco do conteúdo aprendido no curso.
@@ -74,9 +76,11 @@ Confira todas as mudanças e melhorias no projeto acessando o [Changelog](https:
 
 ---
 
-## Minhas estatísticas ##
+## Minhas estatísticas
 
 ![rmartinione's Stats](https://github-readme-stats.vercel.app/api?username=rmartinione&theme=tokyonight&show_icons=true&hide_border=false&count_private=false)
+
+---
 
 ## Status do Projetos: Em Andamento
 
@@ -87,22 +91,3 @@ Veja
 ```bash
   comando <subcomando>
      resultado_Subcomando(#"Sempre_Em_Evolução"#)
-```
-
-## Sobre referência de segurança da Oracle
-
-Segurança no Oracle  
-
-Este documento contém diretrizes e referências sobre segurança em projetos que utilizam tecnologias Oracle.  
-
-## Links úteis  
-
-- [Segurança no Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/)  
-- [Oracle Cloud Security](https://www.oracle.com/cloud/security/)  
-- [Oracle Data Safe – Proteção de Dados](https://www.oracle.com/database/technologies/data-safe.html)  
-
-## Melhorias Futuras  
-- Implementar criptografia de dados no Oracle.  
-- Explorar autenticação segura com Oracle Identity Cloud.
-
----

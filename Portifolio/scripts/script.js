@@ -3,31 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
+  // Função para abrir/fechar o menu
+  const toggleMenu = () => {
+    navLinks.classList.toggle("active");
+    const isActive = navLinks.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", isActive);
+  };
+
+  // Função para fechar o menu
+  const closeMenu = () => {
+    navLinks.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  };
+
   // Verifica se os elementos existem
   if (hamburger && navLinks) {
     // Abre/fecha o menu ao clicar no botão hambúrguer
     hamburger.addEventListener("click", (e) => {
       e.stopPropagation(); // Impede que o clique no hambúrguer feche o menu imediatamente
-      navLinks.classList.toggle("active");
-      const isActive = navLinks.classList.contains("active");
-      // Atualiza o atributo "aria-expanded" conforme o estado do menu
-      hamburger.setAttribute("aria-expanded", isActive);
+      toggleMenu();
     });
 
     // Fecha o menu ao clicar fora dele
     document.addEventListener("click", (e) => {
       // Verifica se o clique não foi dentro do menu ou do hambúrguer
       if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-        navLinks.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
+        closeMenu();
       }
     });
 
     // Fecha o menu ao pressionar "Esc"
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        navLinks.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
+        closeMenu();
       }
     });
   }
@@ -43,4 +51,67 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Alternar exibição dos detalhes dos projetos
+  const toggleDetailsButtons = document.querySelectorAll(".toggle-details");
+  toggleDetailsButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const projectCard = button.closest(".project-card");
+      projectCard.classList.toggle("active");
+    });
+  });
+
+  // Validação do formulário de contato
+  const form = document.getElementById("contact-form");
+  const nome = document.getElementById("nome");
+  const email = document.getElementById("email");
+  const mensagem = document.getElementById("mensagem");
+  const nomeError = document.getElementById("nomeError");
+  const emailError = document.getElementById("emailError");
+  const charCount = document.getElementById("charCount");
+
+  if (form) {
+    nome.addEventListener("input", () => {
+      const nomeValue = nome.value.trim();
+      if (/[^a-zA-Z\s]/.test(nomeValue)) {
+        nomeError.textContent = "Nome inválido. Use apenas letras e espaços.";
+        nomeError.style.display = "block";
+      } else {
+        nomeError.style.display = "none";
+      }
+    });
+
+    email.addEventListener("input", () => {
+      const emailValue = email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        emailError.textContent = "E-mail inválido. Verifique o formato.";
+        emailError.style.display = "block";
+      } else {
+        emailError.style.display = "none";
+      }
+    });
+
+    mensagem.addEventListener("input", () => {
+      const mensagemValue = mensagem.value.trim();
+      charCount.textContent = `${mensagemValue.length}/1000 caracteres`;
+      if (mensagemValue.length > 1000) {
+        mensagem.setCustomValidity("A mensagem não pode exceder 1000 caracteres.");
+      } else {
+        mensagem.setCustomValidity("");
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
+        alert("Por favor, preencha todos os campos.");
+      } else if (nomeError.style.display === "block" || emailError.style.display === "block") {
+        alert("Por favor, corrija os erros antes de enviar.");
+      } else {
+        alert("Formulário enviado com sucesso!");
+        form.reset();
+        charCount.textContent = "0/1000 caracteres";
+      }
+    });
+  }
 });

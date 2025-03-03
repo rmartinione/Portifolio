@@ -1,4 +1,4 @@
-## 🚀 Sobre mim...
+# 🚀 Sobre mim...
 
 Olá, sou **Rafael Martiniano**!
 
@@ -20,3 +20,42 @@ Estou animado com minha jornada na programação web, e busco sempre aplicar meu
 
 
 "# Portifolio" 
+# Portfólio de Rafael Martiniano
+
+Bem-vindo ao meu portfólio! Este repositório contém o código-fonte do meu portfólio pessoal, onde apresento meus projetos, habilidades e informações de contato.
+
+## Índice
+
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Contato](#contato)
+- [Licença](#licença)
+
+## Sobre
+
+Este portfólio foi desenvolvido para apresentar meus projetos e habilidades como desenvolvedor front-end. Aqui você encontrará informações sobre mim, meus conhecimentos técnicos, projetos em destaque e formas de entrar em contato.
+
+## Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- [EmailJS](https://www.emailjs.com/) (para envio de formulários)
+- [Google Fonts](https://fonts.google.com/)
+- [Shields.io](https://shields.io/) (para badges)
+
+## Estrutura do Projeto
+
+A estrutura do projeto é organizada da seguinte forma:
+
+Portifolio/ ├── assets/ │ ├── images/ │ └── ... ├── pages/ │ ├── contact.html │ ├── sobre.html │ ├── skills.html │ ├── projetos.html │ └── ... ├── scripts/ │ └── script.js ├── styles/ │ └── style.css ├── index.html └── README.md
+
+## Funcionalidades
+
+- **Página Inicial**: Apresentação e navegação para outras seções do portfólio.
+- **Sobre**: Informações sobre mim e minha trajetória.
+- **Habilidades**: Tecnologias e ferramentas que domino.
+- **Projetos**: Projetos em destaque com descrições e links para visualização.
+- **Contato**: Formulário de contato funcional com validação e envio de e-mails.
+
