@@ -1,6 +1,12 @@
 /* Estilos básicos para o corpo da página */
 body {
-    background-color: blue;
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* Fundo gradiente verde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 /* Estilos para o contêiner principal */
@@ -22,7 +28,7 @@ h1 {
 
 /* Estilos para a área de texto */
 textarea {
-    width: 95%; /* Define a largura da área de texto */
+    width: 100%; /* Define a largura da área de texto */
     height: 300px; /* Define a altura da área de texto */
     margin-bottom: 20px; /* Adiciona espaçamento inferior */
     padding: 15px; /* Adiciona espaçamento interno */
@@ -31,6 +37,7 @@ textarea {
     font-size: 16px; /* Define o tamanho da fonte */
     resize: none; /* Desabilita o redimensionamento */
     background-color: #e0f7fa; /* Define a cor de fundo da área de texto */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 /* Estilos para os botões */
