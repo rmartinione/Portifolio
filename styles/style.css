@@ -145,7 +145,18 @@ body {
   }
 }
 
+/* Botões de Chamada para Ação */
+.btn-container .cta-btn {
+  font-size: 1.2em; /* Tamanho da fonte */
+  padding: 10px 20px; /* Padding */
+  background-color: var(--accent-color); /* Cor de destaque */
+  color: var(--text-color); /* Cor do texto */
+  border-radius: 5px; /* Borda arredondada */
+  transition: background-color 0.3s; /* Transição */
+}
 
+.btn-container .cta-btn:hover {
+  background-color: #e55a00; /* Cor de fundo ao passar o mouse */
 }
 
 /* Hero Section */
