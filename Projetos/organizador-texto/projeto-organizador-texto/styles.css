@@ -1,13 +1,6 @@
 /* Estilos básicos para o corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte da página */
-    display: flex; /* Usa flexbox para centralizar o conteúdo */
-    flex-direction: column; /* Alinha os itens em coluna */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Define a altura da página igual à altura da janela de visualização */
-    margin: 0; /* Remove margens padrão */
-    background: linear-gradient(to bottom, #ffffff, #a5d6a7); /* Aplica um gradiente de branco para verde como fundo */
+    background-color: blue;
 }
 
 /* Estilos para o contêiner principal */

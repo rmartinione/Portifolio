@@ -1,25 +1,5 @@
 # ![](https://www.alura.com.br/assets/img/depoimentos/oracle-one/logotipo-one.1730889067.svg)
 
-## 🚀 Sobre mim...
-
-Olá, sou **Rafael Martiniano**, estudante do programa **ONE - Oracle Next Education**.
-
-Sou apaixonado por tecnologia, especialmente no campo de **front-end**. Atualmente, estou focado em **HTML**, **CSS**, **JavaScript** e busco sempre aprimorar minhas habilidades em design responsivo e experiência do usuário. Além disso, estou aprendendo sobre as melhores práticas para o desenvolvimento de software.
-
-Tenho grande interesse também nas tecnologias das gigantes **Microsoft**, **Oracle**, **Cisco**, **Fortigate** e outros, especialmente na área de Inteligência Artificial (**IA**).
-
-Estou animado com minha jornada na programação web, e busco sempre aplicar meus conhecimentos em projetos reais e desafios práticos. Meu objetivo é criar soluções inovadoras, seguras e contribuir para a comunidade de desenvolvedores.
-
----
-
-### 🔗 Conecte-se comigo no LinkedIn:
-
-<a href="https://www.linkedin.com/in/rafael-martiniano?trk=profile-badge" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-
----
-
 ## Sobre o **ONE**
 
 **ONE** (Oracle Next Education) é um programa de educação, inclusão e empregabilidade da **Oracle**. É uma oportunidade única de capacitação em tecnologia para pessoas que buscam ingressar no mercado de trabalho, oferecendo formação em **desenvolvimento de software** e outras áreas.

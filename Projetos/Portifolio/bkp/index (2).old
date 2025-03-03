@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convite para Café e Tecnologia</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#home" class="nav__link">Início</a>
+                <a href="#sobre" class="nav__link">Sobre</a>
+                <a href="#projetos" class="nav__link">Projetos</a>
+                <a href="#contato" class="nav__link">Contato</a>
+            </nav>
+
+            <div class="hero-content">
+                <h1>Tomar um café e desenvolver!</h1>
+                <p>Vamos conversar sobre desenvolvimento, tecnologia e, claro, café.</p>
+                <a href="#projetos" class="btn">Ver Projetos</a>
+                <a href="#contato" class="btn btn-secondary">Entre em Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Bem-vindo ao Meu Portfólio</h2>
+            <p>Imagine entrar em um espaço onde a paixão pelo desenvolvimento e a tecnologia se encontra com o aroma acolhedor do café fresco. Aqui, cada linha de código é escrita com a mesma dedicação que se coloca em preparar uma xícara de café perfeita. Este é o lugar onde ideias inovadoras ganham vida e onde cada projeto é uma oportunidade para aprender, crescer e compartilhar conhecimento.</p>
+            <p>Seja você um desenvolvedor experiente ou alguém que está apenas começando, este é o lugar para você. Vamos criar, inovar e, acima de tudo, nos divertir enquanto fazemos o que amamos. Então, pegue sua xícara de café e junte-se a nós nesta jornada de desenvolvimento e tecnologia.</p>
+        </div>
+    </section>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

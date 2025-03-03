@@ -1,0 +1,33 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleciona os elementos de acordo com o CSS/HTML
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    // Abre/fecha o menu ao clicar no botão hamburger
+    hamburger.addEventListener("click", (e) => {
+      navLinks.classList.toggle("active");
+      const isActive = navLinks.classList.contains("active");
+      // Atualiza o atributo de acessibilidade
+      hamburger.setAttribute("aria-expanded", isActive);
+      // Impede que o clique se propague e feche o menu imediatamente
+      e.stopPropagation();
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fecha o menu ao pressionar "Esc"
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        navLinks.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+});

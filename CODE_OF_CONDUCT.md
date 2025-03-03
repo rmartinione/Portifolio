@@ -1,12 +1,14 @@
-# Código de Conduta (Projeto AluraOne)
+# Código de Conduta 
 
 ## Minha Promessa
 
-Eu, como membro, e nós como pessoas colaboradoras e líderes, nos comprometemos a fazer da participação em nosso projeto uma experiência isenta de assédio para todos, independentemente de idade, tamanho corporal, deficiência visível ou invisível, etnia, características sexuais, identidade e expressão de gênero, nível de experiência, educação, status socioeconômico, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual.
+Eu, como membro e criador deste repositório, me comprometo o uso correto seguro e em participações em outros portiolios e projetos, caso venham a aparecer no futuro.
 
-Nos comprometemos a agir e interagir de maneiras que contribuam para uma comunidade aberta, acolhedora, diversa, inclusiva e saudável.
+Meus projetos buscam sempre oferecer uma experiência isenta de assédio para qualquer pessoa, independentemente de idade, tamanho corporal, deficiência visível ou invisível, etnia, características sexuais, identidade e expressão de gênero, nível de experiência, educação, status socioeconômico, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual, **sempre**.
 
-## Nossos Padrões
+Meu comprometimento é sempre em agir e interagir de maneiras que contribuam para uma comunidade aberta, acolhedora, diversa, inclusiva e saudável.
+
+## Padrão
 
 Exemplos de comportamentos que contribuem para um ambiente positivo incluem:
 
@@ -77,12 +79,3 @@ Diretrizes de Impacto na Comunidade foram inspiradas na [escada de execução do
 [homepage]: https://www.contributor-covenant.org
 
 Para respostas a perguntas comuns sobre este código de conduta, veja as FAQ em https://www.contributor-covenant.org/faq. Traduções estão disponíveis em https://www.contributor-covenant.org/translations.
-
----
-
-Para referências adicionais, veja:
-
-- [Código de Conduta do Fornecedor da Oracle](https://www.oracle.com/a/ocom/docs/supplier-code-of-conduct-pt.pdf)
-- [Termos de Uso da Alura](https://www.alura.com.br/termos-de-uso?srsltid=AfmBOorl4-KzprRaoAx8-ABXBla1lWepdPqK71hKam--H4rjaH74rSQe)
-
-Este documento é complementado por informações do [README.md](https://github.com/rmartinione/Challenge-AluraOne/blob/main/README.md) do repositório do projeto.

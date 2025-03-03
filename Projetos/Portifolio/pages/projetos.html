@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RM - Portfólio - Projetos</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Cabeçalho com Banner, Navegação e Título -->
+  <header class="header" id="home">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav__right">
+          <!-- Lista de Navegação -->
+          <ul class="nav__list">
+            <li><a href="../index.html" class="nav__link"><i class="material-icons">home</i> Página Inicial</a></li>
+            <li><a href="sobre.html" class="nav__link"><i class="material-icons">info</i> Sobre</a></li>
+            <li><a href="skills.html" class="nav__link"><i class="material-icons">build</i> Habilidades</a></li>
+            <li><a href="contact.html" class="nav__link"><i class="material-icons">mail</i> Contato</a></li>
+          </ul>
+          <!-- Botão para Menu Mobile -->
+          <button class="nav__toggle" aria-label="Abrir menu">
+            <span class="material-icons">menu</span>
+          </button>
+        </div>
+      </nav>
+      <!-- Título da Página -->
+      <div class="header-content">
+        <h1 class="header-title">Projetos</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container">
+    <!-- Seção de Projetos -->
+    <section class="section">
+      <h2>Projetos em Destaque</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Projeto 1</h3>
+          <p>Descrição breve do projeto 1.</p>
+          <div class="btn-group">
+            <a href="#" class="btn">Ver Projeto</a>
+            <button class="btn-secondary toggle-details">Saiba Mais</button>
+          </div>
+          <div class="project-details">
+            <p>Detalhes adicionais sobre o projeto 1.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Projeto 2</h3>
+          <p>Descrição breve do projeto 2.</p>
+          <div class="btn-group">
+            <a href="#" class="btn">Ver Projeto</a>
+            <button class="btn-secondary toggle-details">Saiba Mais</button>
+          </div>
+          <div class="project-details">
+            <p>Detalhes adicionais sobre o projeto 2.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Boas Práticas -->
+    <section class="section">
+      <h2>Boas Práticas em Desenvolvimento</h2>
+      <p>Seguir boas práticas é essencial para manter um código limpo e eficiente. Aqui estão algumas recomendações:</p>
+      <ul>
+        <li>Escrever código bem estruturado e documentado.</li>
+        <li>Seguir princípios de desenvolvimento como SOLID.</li>
+        <li>Manter um fluxo de versionamento eficiente com Git.</li>
+        <li>Utilizar testes automatizados sempre que possível.</li>
+      </ul>
+    </section>
+
+    <!-- Seção Agile e Scrum -->
+    <section class="section">
+      <h2>Metodologias Ágeis e Scrum</h2>
+      <p>Scrum é um framework ágil que ajuda na organização e entrega eficiente de projetos. Principais conceitos:</p>
+      <ul>
+        <li><strong>Sprints:</strong> Períodos curtos de desenvolvimento com metas definidas.</li>
+        <li><strong>Daily Stand-ups:</strong> Reuniões rápidas para alinhar tarefas.</li>
+        <li><strong>Backlog:</strong> Lista organizada de tarefas pendentes.</li>
+      </ul>
+    </section>
+
+    <!-- Seção de Links Úteis -->
+    <section class="section">
+      <h2>Links Úteis para Estudos</h2>
+      <ul>
+        <li><a href="https://www.scrumguides.org" target="_blank">Guia Oficial do Scrum</a></li>
+        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+        <li><a href="https://docs.oracle.com" target="_blank">Documentação Oficial da Oracle</a></li>
+        <li><a href="https://docs.github.com" target="_blank">Documentação do GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__socials">
+        <a href="https://www.linkedin.com/in/rafael-martiniano" target="_blank" class="footer__social-link" aria-label="LinkedIn">
+          <i class="material-icons footer-icon">linkedin</i>
+        </a>
+        <a href="https://rmartinione.github.io/Challenge-AluraOne/" target="_blank" class="footer__social-link" aria-label="GitHub">
+          <i class="material-icons footer-icon">code</i>
+        </a>
+      </div>
+      <div class="footer__info">
+        <p>© 2025 Rafael Martiniano - Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/script.js"></script>
+</body>
+</html>
