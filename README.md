@@ -1,6 +1,4 @@
-# Portifolio de Rafael Martiniano
-
-## Sobre Mim
+# Sobre Mim
 
 Olá, sou **Rafael Martiniano**! Sou apaixonado por tecnologia, especialmente no campo de **front-end**. Atualmente, focado em **HTML**, **CSS**, **JavaScript** e sempre buscando aprimorar minhas habilidades em design responsivo e desenvolvimento web.
 
@@ -8,21 +6,21 @@ Tenho grande interesse nas tecnologias de gigantes como **Oracle**, **Microsoft*
 
 ## Projetos
 
-### Alura
+### Projeto ONE (Oracle + Alura)
 - [Diretório Alura](https://github.com/rmartinione/Portifolio/tree/portifolio/Alura)
 - Descrição: Projetos realizados durante o curso Alura ONE.
-
-### Documentação
-- [Diretório Documentação](Em breve!)
-- Descrição: Documentação dos projetos e estudos realizados.
 
 ### Portifolio
 - [Diretório Portifolio](https://github.com/rmartinione/Portifolio/tree/portifolio/Portifolio)
 - Descrição: Projetos pessoais e profissionais desenvolvidos.
 
 ### Projetos
-- [Diretório Projetos](https://github.com/rmartinione/Portifolio/tree/portifolio/Projetos)
+- [Diretório Projetos](Em breve!)
 - Descrição: Outros projetos desenvolvidos.
+
+### Documentação
+- [Diretório Documentação](Em breve!)
+- Descrição: Documentação dos projetos e estudos realizados.
 
 ## Conhecimentos Adquiridos
 
