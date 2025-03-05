@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const botaoIniciar = document.getElementById('botao-iniciar');
+    const botaoIniciarFixo = document.getElementById('botao-iniciar1'); // Para o botão de Desafio Fixo
     const botaoReiniciar = document.getElementById('botao-reiniciar');
     const instrucoes = document.querySelector('.mensagem');
 
-    botaoIniciar.addEventListener('click', function() {
+    botaoIniciarFixo.addEventListener('click', function() { // Usando a variável correta
         instrucoes.innerHTML = `
             <p>Desafio iniciado! Tente adivinhar o número correto.</p>
         `;
-        botaoIniciar.style.display = 'none';
-        botaoReiniciar.style.display = 'inline-block';
+        botaoIniciarFixo.style.display = 'none'; // Esconde o botão de iniciar
+        botaoReiniciar.style.display = 'inline-block'; // Mostra o botão de reiniciar
 
         // Define o número que o usuário deve adivinhar
         const numeroAdivinhacao = 7;

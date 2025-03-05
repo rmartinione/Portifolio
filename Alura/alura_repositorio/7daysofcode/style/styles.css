@@ -1,305 +1,261 @@
-/* Formatação compartilhada cabeçalho */
+/* === Basic Reset & Variables === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --white: #fff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+}
+
+/* === Typography & Body === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* === Header & Footer === */
 .cabecalho {
-    background-color: #333; /* Cor de fundo do cabeçalho */
-    color: #fff; /* Cor do texto do cabeçalho */
-    padding: 10px 0; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cabecalho img {
-    max-width: 100px; /* Largura máxima da imagem */
+    max-width: 100px;
 }
 
-/* Formatação compartilhada rodapé */
 .rodape {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: #fff; /* Cor do texto do rodapé */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px 0; /* Espaçamento interno */
-    position: fixed; /* Fixa o rodapé na parte inferior */
-    width: 100%; /* Largura de 100% */
-    bottom: 0; /* Posiciona na parte inferior */
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .rodape img {
-    margin: 0 10px; /* Espaçamento entre os badges */
+    margin: 0 0.5em;
 }
 
 .rodape p {
-    margin-top: 10px; /* Espaçamento superior */
+    margin-top: 10px;
 }
 
-/* Formatação padrão de visualização tela mobile */
-@media (max-width: 480px) {
-    .navegacao ul li {
-        display: block; /* Exibe os itens em bloco */
-        margin: 10px 0; /* Espaçamento entre os itens */
-    }
-}
-
-/* Formatação padrão de visualização tela desktop */
-body {
-    font-family: 'Arial', sans-serif; /* Fonte padrão */
-    margin: 0; /* Remove margens externas */
-    padding: 0; /* Remove o preenchimento interno */
-    background: linear-gradient(135deg, #e0f7fa, #f0f8ff); /* Fundo gradiente mais agradável */
-    text-align: center; /* Centraliza o texto */
-    background-color: #f4f4f4;
-}
-
-/* Formatação index.html */
-.principal {
-    padding: 20px; /* Adiciona espaçamento interno */
-    display: flex; /* Usa Flexbox para o layout */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: flex-start; /* Alinha o conteúdo ao topo */
-}
-
-.conteudo {
-    width: 100%; /* Largura total */
-    max-width: 800px; /* Largura máxima */
-    text-align: center; /* Centraliza o texto */
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+/* === Navegação === */
 .navegacao {
-    flex: 1; /* Ocupa 1 parte do espaço disponível */
-    max-width: 200px; /* Largura máxima da navegação */
-    text-align: left; /* Alinha o texto à esquerda */
+    flex: 0 0 250px;
+    max-width: 200px;
+    text-align: center;
 }
 
 .navegacao ul {
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o preenchimento */
+    list-style: none;
+    padding: 0;
 }
 
 .navegacao ul li {
-    margin: 10px 0; /* Espaçamento entre os itens */
+    margin: 10px 0;
 }
 
 .navegacao ul li a {
-    text-decoration: none; /* Remove a sublinha */
-    color: white; /* Cor do texto */
-    display: block; /* Exibe os itens em bloco */
-    background: linear-gradient(45deg, #ff6b6b, #f06595); /* Fundo gradiente */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navegacao ul li a:hover {
-    background: linear-gradient(45deg, #f06595, #ff6b6b); /* Fundo gradiente ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.texto {
-    flex: 3; /* Ocupa 3 partes do espaço disponível */
-    padding-left: 20px; /* Espaçamento à esquerda */
-    text-align: center; /* Centraliza o texto */
-    color: #333; /* Cor do texto */
+/* === Main Layout === */
+.principal {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    animation: fadeIn 1s ease-out;
 }
 
-.texto h1 {
-    font-size: 2em; /* Tamanho da fonte do título */
-    color: #ff6b6b; /* Cor do título */
-    text-align: center; /* Centraliza o título */
-}
-
-.texto p {
-    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
-    color: #555; /* Cor do parágrafo */
-    text-align: center; /* Centraliza o parágrafo */
-}
-
-.botoes-tema {
-    margin-top: 20px; /* Espaçamento superior */
-    display: flex; /* Usa Flexbox para alinhar os botões */
-    justify-content: center; /* Centraliza os botões */
-    margin-top: 20px;
-}
-
-.botoes-tema button {
-    margin: 0 10px; /* Espaçamento entre os botões */
-}
-
-.botao-tema-escuro, .botao-tema-claro {
-    margin: 5px;
-}
-
-/* Formatação primeiro.html */
-body.primeiro-desafio {
-    background: linear-gradient(135deg, #e0f7fa, #f0f8ff); /* Fundo gradiente mais agradável */
-}
-
-.frase-criativa {
-    font-size: 1.5em; /* Tamanho da fonte */
-    color: #555; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-.codigo-js {
-    background-color: #f4f4f4; /* Cor de fundo */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada */
-    white-space: pre-wrap; /* Mantém a formatação */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-.botao-gradiente {
-    background: linear-gradient(45deg, #ff7043, #ffa726); /* Fundo gradiente laranja */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 1em; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
-    margin: 0 10px; /* Espaçamento entre os botões */
-    display: block;
+.conteudo {
     width: 100%;
-    text-align: center;
-    background: linear-gradient(45deg, #6b8cff, #88b4ff);
-    text-decoration: none;
+    max-width: 1600px;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.botao-gradiente:hover {
-    background: linear-gradient(45deg, #ffa726, #ff7043); /* Fundo gradiente ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-    background: linear-gradient(45deg, #88b4ff, #6b8cff);
+.conteudo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.botao-voltar {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #00796b;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-}
-
-.botao-voltar:hover {
-    background-color: #004d40;
-}
-
-/* Estilo do botão de tema escuro */
-.botao-tema-escuro {
-    background: linear-gradient(45deg, #333, #555); /* Fundo gradiente escuro */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 1em; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
-    margin: 0 10px; /* Espaçamento entre os botões */
-}
-
-.botao-tema-escuro:hover {
-    background: linear-gradient(45deg, #555, #333); /* Fundo gradiente ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-}
-
-/* Estilo do botão de tema claro */
-.botao-tema-claro {
-    background: linear-gradient(45deg, #f0f8ff, #e0f7fa); /* Fundo gradiente claro */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: #333; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 1em; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
-    margin: 0 10px; /* Espaçamento entre os botões */
-}
-
-.botao-tema-claro:hover {
-    background: linear-gradient(45deg, #e0f7fa, #f0f8ff); /* Fundo gradiente ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-}
-
-/* Tema escuro */
-body.tema-escuro {
-    background: linear-gradient(135deg, #333, #555); /* Fundo gradiente escuro */
-    color: white; /* Cor do texto */
-}
-
-body.tema-escuro .cabecalho {
-    background-color: #222; /* Cor de fundo do cabeçalho */
-}
-
-body.tema-escuro .rodape {
-    background-color: #222; /* Cor de fundo do rodapé */
-}
-
-body.tema-escuro .botao-gradiente {
-    background: linear-gradient(45deg, #555, #777); /* Fundo gradiente dos botões */
-}
-
-body.tema-escuro .botao-gradiente:hover {
-    background: linear-gradient(45deg, #777, #555); /* Fundo gradiente ao passar o mouse */
-}
-
-body.tema-escuro .botao-voltar {
-    background-color: #555; /* Cor de fundo dos botões */
-}
-
-body.tema-escuro .botao-voltar:hover {
-    background-color: #777; /* Cor de fundo ao passar o mouse */
-}
-
+/* === Botões & Interações === */
 .botao {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #00796b;
-    color: #ffffff;
+    padding: 0.8em 1.5em;
+    margin: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
+    border: none;
     cursor: pointer;
-    background-color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .botao:hover {
-    background-color: #004d40;
-    background-color: #555;
-}
-
-.botao-voltar {
-    background-color: #00796b;
-}
-
-.botao-voltar:hover {
-    background-color: #004d40;
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
 }
 
 .botao-iniciar {
-    background-color: #ff7043;
+    background-color: var(--success-color);
 }
 
 .botao-iniciar:hover {
-    background-color: #ff5722;
+    background-color: #218838;
 }
 
 .botao-jogar-novamente {
-    background-color: #ff7043;
+    display: none;
 }
 
-.botao-jogar-novamente:hover {
-    background-color: #ff5722;
+.desafio .botao-jogar-novamente {
+    display: block;
 }
 
-.mensagem {
-    font-size: 1.2em;
-    color: #555;
-    margin-top: 20px;
+.botao-voltar {
+    background-color: var(--secondary-color);
+}
+
+.botao-voltar:hover {
+    background-color: #5a6268;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Responsiveness === */
+@media (max-width: 768px) {
+    .principal {
+        padding: 10px;
+    }
+
+    .navegacao {
+        max-width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navegacao ul li {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: var(--primary-color);
+        text-align: center;
+    }
+
+    .botao {
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+    }
+
+    .conteudo {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Centralizando o botão reiniciar no contêiner */
+#botao-reiniciar {
+    display: none;            /* Inicialmente oculto */
+    margin: 20px auto;        /* Centraliza com margens automáticas */
+    max-width: 200px;         /* Limita a largura do botão */
+    padding: 10px 20px;       /* Garantir que o botão tenha um bom tamanho */
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;       /* Garante o alinhamento do texto */
+}
+
+/* Quando o botão estiver visível */
+.desafio #botao-reiniciar {
+    display: block;           /* Exibe o botão quando necessário */
+}
+
+/* Efeito de hover para o botão */
+#botao-reiniciar:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* Melhorando o efeito de transição para suavizar a interação */
+#botao-reiniciar:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);  /* Cor de foco mais clara */
+}
+
+/* Mais clareza na animação do botão de reiniciar */
+#botao-reiniciar {
+    transition: all 0.3s ease-out;
+}
+
+/* Ajuste no botão de voltar */
+.botao-voltar {
+    background-color: var(--secondary-color);
+    padding: 0.8em 1.5em;
+    margin: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 5px;
+}
+
+.botao-voltar:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }

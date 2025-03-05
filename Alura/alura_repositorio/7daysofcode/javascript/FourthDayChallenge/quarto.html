@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Days of Code - [Nome do Desafio]</title>
-    <link rel="stylesheet" href="../../style/styles.css"> 
-    <script src="../../script.js" defer></script>
+    <title>7 Days of Code - Quarto Desafio</title>
+    <link rel="stylesheet" href="../../style/styles.css">
+    <script src="configquarto.js" defer></script>
 </head>
 <body class="desafio">
     <header class="cabecalho">
         <img src="../../img/background-7days.svg" alt="Logo 7 Days of Code">
     </header>
     <main class="principal">
-        <div class="conteudo">
-            <!-- Your challenge content goes here -->
-            <section class="texto">
-                <h1>[Nome do Desafio]</h1>
-                <p>[Descrição do Desafio]</p>
-            </section>
-            <button class="botao-voltar" onclick="window.location.href='../../../index.html'">Voltar</button>
-        </div>
+        <section class="conteudo">
+            <h1>Quarto Desafio: Adivinhação de Números</h1>
+            <p class="mensagem">Instruções: Escolha um dos desafios abaixo.</p>
+            <button id="botao-iniciar1" class="botao botao-iniciar">Desafio Fixo</button>
+            <button id="botao-iniciar2" class="botao botao-iniciar">Desafio Aleatório</button>
+            <button id="botao-reiniciar" class="botao botao-jogar-novamente" style="display: none;">Tentar Novamente</button>
+            <br>
+            <button onclick="window.location.href='../../index.html'" class="botao botao-voltar">Voltar</button>
+        </section>
     </main>
     <footer class="rodape">
         <img src="https://img.shields.io/badge/JavaScript-yellow" alt="JavaScript Badge">

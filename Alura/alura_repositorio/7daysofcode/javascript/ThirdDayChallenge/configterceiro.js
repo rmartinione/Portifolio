@@ -1,12 +1,12 @@
-// javascript/SecondDayChallenge/configsegundo.js
+// javascript/ThirdDayChallenge/configterceiro.js
 document.addEventListener("DOMContentLoaded", function() {
     const mensagem = document.querySelector(".mensagem");
     const botaoIniciar = document.getElementById("botao-iniciar");
     const botaoReiniciar = document.getElementById('botao-reiniciar');
     const botaoVoltar = document.querySelector('.botao-voltar');
 
-    // Mensagem inicial do Segundo Desafio
-    mensagem.textContent = "Bem-vindo ao Segundo Desafio! Neste desafio, você deverá responder algumas perguntas, Clique em iniciar.";
+    // Mensagem inicial do Terceiro Desafio
+    mensagem.textContent = "Bem-vindo ao Terceiro Desafio! Neste desafio, você deverá fazer escolhas sobre áreas e tecnologias. Clique em iniciar.";
 
     botaoIniciar.addEventListener('click', function(){
         // Oculta a mensagem e o botão iniciar
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Carrega o arquivo de desafio
         const script = document.createElement('script');
-        script.src = 'secondchallenge.js';
+        script.src = 'thirdchallenge.js';
         script.defer = true; // Garante que o script será executado após o carregamento da página
         document.body.appendChild(script);
 
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     botaoReiniciar.addEventListener('click', function(){
         location.reload(); // Recarrega a página
     });
+
     // Evento para o botão Voltar
     botaoVoltar.addEventListener('click', function(){
         window.location.href='../../index.html';

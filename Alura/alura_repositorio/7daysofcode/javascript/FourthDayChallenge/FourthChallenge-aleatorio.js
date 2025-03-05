@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const botaoIniciar = document.getElementById('botao-iniciar');
+    const botaoIniciarAleatorio = document.getElementById('botao-iniciar2'); // Para o botão de Desafio Aleatório
     const botaoReiniciar = document.getElementById('botao-reiniciar');
     const instrucoes = document.querySelector('.mensagem');
 
-    botaoIniciar.addEventListener('click', function() {
+    botaoIniciarAleatorio.addEventListener('click', function() { // Usando a variável correta
         instrucoes.innerHTML = `
             <p>Desafio iniciado! Tente adivinhar o número correto.</p>
         `;
-        botaoIniciar.style.display = 'none';
-        botaoReiniciar.style.display = 'inline-block';
+        botaoIniciarAleatorio.style.display = 'none'; // Esconde o botão de iniciar
+        botaoReiniciar.style.display = 'inline-block'; // Mostra o botão de reiniciar
 
         // Gera um número aleatório entre 0 e 10 para ser adivinhado
         const numeroAdivinhacao = Math.floor(Math.random() * (10 - 0 + 1) + 0);
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Define a variável 'acertou' como verdadeira, indicando que o usuário acertou
                 acertou = true;
                 
-                // Encerra o laço de repetição, já que o usuário acertou
+                // Encerra o laço de repetição
                 break;
             }
             
@@ -45,9 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
             // Se o usuário não acertou, exibe uma mensagem informando o número correto
             alert(`Infelizmente, você não acertou. O número era ${numeroAdivinhacao}!`);
         }
-    });
-
-    botaoReiniciar.addEventListener('click', function() {
-        location.reload();
     });
 });
