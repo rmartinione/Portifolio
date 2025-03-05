@@ -41,3 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.getElementById('botao-tema-escuro').addEventListener('click', () => {
+    document.body.classList.add('dark-theme');
+    document.body.classList.remove('light-theme');
+});
+
+document.getElementById('botao-tema-claro').addEventListener('click', () => {
+    document.body.classList.add('light-theme');
+    document.body.classList.remove('dark-theme');
+});

@@ -15,11 +15,16 @@
         <section class="conteudo">
             <h1>Quarto Desafio: Adivinhação de Números</h1>
             <p class="mensagem">Instruções: Escolha um dos desafios abaixo.</p>
-            <button id="botao-iniciar1" class="botao botao-iniciar">Desafio Fixo</button>
-            <button id="botao-iniciar2" class="botao botao-iniciar">Desafio Aleatório</button>
-            <button id="botao-reiniciar" class="botao botao-jogar-novamente" style="display: none;">Tentar Novamente</button>
-            <br>
-            <button onclick="window.location.href='../../index.html'" class="botao botao-voltar">Voltar</button>
+            
+            <!-- Contêiner para os botões "Desafio Fixo" e "Desafio Aleatório" -->
+            <div class="botao-container">
+                <button id="botao-iniciar1" class="botao botao-iniciar">Desafio Fixo</button>
+                <button id="botao-iniciar2" class="botao botao-iniciar">Desafio Aleatório</button>
+            </div>
+            
+                <button id="botao-reiniciar" class="botao botao-jogar-novamente" style="display: none;">Jogar Novamente</button>
+                <br>
+                <button onclick="window.location.href='../../index.html'" class="botao botao-voltar">Voltar</button>
         </section>
     </main>
     <footer class="rodape">

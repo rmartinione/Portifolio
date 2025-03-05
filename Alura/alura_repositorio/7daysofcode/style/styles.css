@@ -1,64 +1,94 @@
 /* === Basic Reset & Variables === */
+/* Resetando margin, padding e box-sizing para garantir consistência */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Definição das variáveis de cores para os temas claro e escuro */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
-    --text-color: #212529;
-    --white: #fff;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
+    /* Cores para o tema claro */
+    --primary-color-light: #007bff; /* Azul */
+    --secondary-color-light: #6c757d;
+    --background-color-light: #f8f9fa;
+    --text-color-light: #212529;
+    --white-light: #fff;
+    --success-color-light: #28a745;
+    --warning-color-light: #ffc107;
+
+    /* Cores para o tema escuro */
+    --primary-color-dark: #1e1e1e;
+    --secondary-color-dark: #444;
+    --background-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --white-dark: #333;
+    --success-color-dark: #28a745;
+    --warning-color-dark: #ffc107;
 }
 
-/* === Typography & Body === */
+/* === Tipografia e Cor do Texto === */
+/* Estilizando o corpo da página com fontes e cores apropriadas */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    transition: background-color 0.3s ease;
-    text-align: center;
+    color: var(--text-color); /* Usando variável para texto */
+    background-color: var(--background-color); /* Usando variável para o fundo */
+    transition: background-color 0.3s ease; /* Transição suave para mudanças de cor */
+    text-align: center; /* Alinhamento centralizado */
 }
 
-/* === Header & Footer === */
-.cabecalho {
-    background-color: var(--primary-color);
-    color: var(--white);
+/* === Cabeçalho & Rodapé === */
+/* Estilizando cabeçalho e rodapé para ambos os temas */
+.cabecalho, .rodape {
+    background-color: var(--primary-color); /* Cor de fundo padrão, será alterado conforme o tema */
+    color: var(--white); /* Cor do texto */
     padding: 1em 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombras sutis */
 }
 
-.cabecalho img {
-    max-width: 100px;
+.cabecalho img, .rodape img {
+    max-width: 100px; /* Limitando o tamanho das imagens */
 }
 
 .rodape {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 1em 0;
     position: fixed;
     width: 100%;
     bottom: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.rodape img {
-    margin: 0 0.5em;
+/* === Tema Claro === */
+/* Ajustando cores para o tema claro */
+body.light-theme {
+    --primary-color: #007bff; /* Azul para o tema claro */
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --white: #fff;
 }
 
-.rodape p {
-    margin-top: 10px;
+body.light-theme .cabecalho, body.light-theme .rodape {
+    background-color: var(--primary-color); /* Azul para o cabeçalho e rodapé */
+}
+
+/* === Tema Escuro === */
+/* Ajustando cores para o tema escuro */
+body.dark-theme {
+    --primary-color: #343a40; /* Cor escura para o cabeçalho e rodapé */
+    --secondary-color: #6c757d;
+    --background-color: #212529;
+    --text-color: #e9ecef;
+    --white: #495057;
+}
+
+body.dark-theme .cabecalho, body.dark-theme .rodape {
+    background-color: var(--primary-color); /* Cor escura para o cabeçalho e rodapé */
 }
 
 /* === Navegação === */
+/* Estilizando a navegação lateral */
 .navegacao {
     flex: 0 0 250px;
     max-width: 200px;
@@ -66,7 +96,7 @@ body {
 }
 
 .navegacao ul {
-    list-style: none;
+    list-style: none; /* Removendo marcadores de lista */
     padding: 0;
 }
 
@@ -75,124 +105,100 @@ body {
 }
 
 .navegacao ul li a {
-    text-decoration: none;
-    color: var(--white);
+    text-decoration: none; /* Removendo underline */
+    color: var(--white); /* Cor do texto */
     display: block;
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    background: linear-gradient(45deg, #ff6b6b, #f06595); /* Gradiente de fundo */
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
 }
 
 .navegacao ul li a:hover {
-    background: linear-gradient(45deg, #f06595, #ff6b6b);
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #f06595, #ff6b6b); /* Efeito hover */
+    transform: scale(1.1); /* Aumentando o tamanho no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adicionando sombra */
 }
 
-/* === Main Layout === */
+/* === Layout Principal === */
+/* Estilizando o layout principal e o conteúdo */
 .principal {
-    max-width: 1200px;
-    margin: 2em auto;
-    padding: 1em;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Garantindo que ocupe toda a altura da tela */
+    padding: 1em;
+    flex-direction: column; /* Coloca os elementos na direção vertical */
     animation: fadeIn 1s ease-out;
 }
 
+/* Centraliza o conteúdo dentro do container */
 .conteudo {
     width: 100%;
-    max-width: 1600px;
-    margin: 20px auto;
-    background-color: var(--white);
+    max-width: 800px; /* Limita a largura do conteúdo */
     padding: 20px;
-    border-radius: 10px;
+    background-color: var(--white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: center; /* Centraliza o texto */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .conteudo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Levanta o conteúdo no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra no hover */
 }
 
 /* === Botões & Interações === */
+/* Estilizando botões gerais */
 .botao {
+    margin: 0.5rem;
+    text-align: center; /* Garante que o texto do botão seja centralizado */
     display: inline-block;
     padding: 0.8em 1.5em;
-    margin: 0.5rem;
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
     border-radius: 5px;
-    border: none;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.botao:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-}
-
-.botao-iniciar {
-    background-color: var(--success-color);
-}
-
-.botao-iniciar:hover {
-    background-color: #218838;
-}
-
-.botao-jogar-novamente {
-    display: none;
-}
-
-.desafio .botao-jogar-novamente {
-    display: block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botao-voltar {
-    background-color: var(--secondary-color);
+    margin-top: 20px;
 }
 
-.botao-voltar:hover {
-    background-color: #5a6268;
+.botao:hover {
+    background-color: #0056b3; /* Cor de fundo no hover */
+    transform: translateY(-1px); /* Efeito de elevação */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25); /* Aumentando a sombra */
 }
 
-/* === Animations === */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* === Estilização para o botão "Tentar Novamente" === */
+.botao-jogar-novamente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+    margin-top: 20px;
 }
 
-/* === Responsiveness === */
+/* === Contêiner de Botões Lado a Lado === */
+.botao-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Distância do topo (ajustável conforme necessário) */
+}
+
+
+/* === Responsividade para Botões === */
 @media (max-width: 768px) {
     .principal {
         padding: 10px;
     }
 
-    .navegacao {
-        max-width: 100%;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navegacao ul li {
-        margin: 5px 0;
-        padding: 10px;
-        background-color: var(--primary-color);
-        text-align: center;
+    .botao-container {
+        flex-direction: column; /* Coloca os botões em coluna em telas menores */
+        gap: 1rem; /* Espaço entre os botões */
     }
 
     .botao {
@@ -206,56 +212,14 @@ body {
     }
 }
 
-/* Centralizando o botão reiniciar no contêiner */
-#botao-reiniciar {
-    display: none;            /* Inicialmente oculto */
-    margin: 20px auto;        /* Centraliza com margens automáticas */
-    max-width: 200px;         /* Limita a largura do botão */
-    padding: 10px 20px;       /* Garantir que o botão tenha um bom tamanho */
-    font-size: 1.1rem;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;       /* Garante o alinhamento do texto */
-}
-
-/* Quando o botão estiver visível */
-.desafio #botao-reiniciar {
-    display: block;           /* Exibe o botão quando necessário */
-}
-
-/* Efeito de hover para o botão */
-#botao-reiniciar:hover {
-    background-color: #218838;
-    transform: translateY(-1px);
-}
-
-/* Melhorando o efeito de transição para suavizar a interação */
-#botao-reiniciar:focus {
-    outline: none;
-    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);  /* Cor de foco mais clara */
-}
-
-/* Mais clareza na animação do botão de reiniciar */
-#botao-reiniciar {
-    transition: all 0.3s ease-out;
-}
-
-/* Ajuste no botão de voltar */
-.botao-voltar {
-    background-color: var(--secondary-color);
-    padding: 0.8em 1.5em;
-    margin: 0.5rem;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    border-radius: 5px;
-}
-
-.botao-voltar:hover {
-    background-color: #5a6268;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* === Animação de Fade-In === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
