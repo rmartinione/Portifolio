@@ -77,8 +77,9 @@ body {
   display: flex; /* Flexbox */
   justify-content: space-between; /* Espaço entre os itens */
   align-items: center; /* Alinha itens ao centro verticalmente */
-  padding: 15px 20px; /* Padding */
+  padding: 30px 20px; /* Padding */
   background: rgba(0, 0, 0, 0.6); /* Fundo levemente transparente */
+  border-radius: 0px;
 }
 
 /* Botão hambúrguer (mobile) */
@@ -96,7 +97,7 @@ body {
 .hamburger span {
   width: 30px; /* Largura */
   height: 4px; /* Altura */
-  background: var(--text-color); /* Cor de fundo */
+  background: var(--accent-color); /* Cor de fundo */
   margin: 5px 0; /* Margem */
   transition: all 0.3s; /* Transição */
 }
