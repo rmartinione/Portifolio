@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+
+    // USO ATUAL PARA DISPARAR O E-MAIL PARA O REMETENTE SOLICITADO:
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
@@ -108,10 +110,30 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (nomeError.style.display === "block" || emailError.style.display === "block") {
         alert("Por favor, corrija os erros antes de enviar.");
       } else {
-        alert("Formulário enviado com sucesso!");
+        // Cria o link mailto
+        const mailtoLink = `mailto:rm_corporate@hotmail.com?subject=Contato de ${encodeURIComponent(nome.value)}&body=Nome: ${encodeURIComponent(nome.value)}%0AEmail: ${encodeURIComponent(email.value)}%0AMensagem: ${encodeURIComponent(mensagem.value)}`;
+    
+        // Abre o gerenciador de e-mails do usuário
+        window.location.href = mailtoLink;
+    
+        // Reseta o formulário e o contador de caracteres
         form.reset();
         charCount.textContent = "0/1000 caracteres";
+        alert("Gerenciador de e-mails aberto com os dados preenchidos.");
       }
     });
-  }
-});
+    
+
+    // ***** USO FUTURO COM BACKEND ***** 
+    // form.addEventListener("submit", (e) => {
+    //  e.preventDefault();
+    //  if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
+    //    alert("Por favor, preencha todos os campos.");
+    //  } else if (nomeError.style.display === "block" || emailError.style.display === "block") {
+    //    alert("Por favor, corrija os erros antes de enviar.");
+    //  } else {
+    //    alert("Formulário enviado com sucesso!");
+    //    form.reset();
+    //    charCount.textContent = "0/1000 caracteres";
+    //  }
+    // }); 
