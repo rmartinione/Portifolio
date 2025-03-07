@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fecha o menu ao clicar fora dele
     document.addEventListener("click", (e) => {
-      // Verifica se o clique não foi dentro do menu ou do hambúrguer
       if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         closeMenu();
       }
@@ -42,19 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botões de chamada para ação com animação suave ao clicar
   const ctaButtons = document.querySelectorAll(".btn-container .cta-btn");
-  ctaButtons.forEach(button => {
+  ctaButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
       const target = document.querySelector(button.getAttribute("href"));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: "smooth" });
       }
     });
   });
 
   // Alternar exibição dos detalhes dos projetos
   const toggleDetailsButtons = document.querySelectorAll(".toggle-details");
-  toggleDetailsButtons.forEach(button => {
+  toggleDetailsButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const projectCard = button.closest(".project-card");
       projectCard.classList.toggle("active");
@@ -69,6 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const nomeError = document.getElementById("nomeError");
   const emailError = document.getElementById("emailError");
   const charCount = document.getElementById("charCount");
+
+  const showPopupMessage = (message) => {
+    const popup = document.createElement("div");
+    popup.className = "success-message";
+    popup.textContent = message;
+
+    // Adiciona o popup após o formulário
+    form.parentElement.appendChild(popup);
+
+    // Remove o popup automaticamente após 5 segundos
+    setTimeout(() => {
+      popup.remove();
+    }, 5000);
+  };
 
   if (form) {
     nome.addEventListener("input", () => {
@@ -101,8 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-
-    // USO ATUAL PARA DISPARAR O E-MAIL PARA O REMETENTE SOLICITADO:
+    // Envio do formulário para abrir o gerenciador de e-mails
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
@@ -111,29 +123,24 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Por favor, corrija os erros antes de enviar.");
       } else {
         // Cria o link mailto
-        const mailtoLink = `mailto:rm_corporate@hotmail.com?subject=Contato de ${encodeURIComponent(nome.value)}&body=Nome: ${encodeURIComponent(nome.value)}%0AEmail: ${encodeURIComponent(email.value)}%0AMensagem: ${encodeURIComponent(mensagem.value)}`;
-    
+        const mailtoLink = `mailto:rm_corporate@hotmail.com?subject=Contato de ${encodeURIComponent(
+          nome.value
+        )}&body=Nome: ${encodeURIComponent(nome.value)}%0AEmail: ${encodeURIComponent(
+          email.value
+        )}%0AMensagem: ${encodeURIComponent(mensagem.value)}`;
+
         // Abre o gerenciador de e-mails do usuário
         window.location.href = mailtoLink;
-    
-        // Reseta o formulário e o contador de caracteres
+
+        // Exibe mensagem de confirmação com popup
+        showPopupMessage(
+          "Formulário enviado com sucesso! Por gentileza, finalize o envio no Gerenciador de e-mails."
+        );
+
+        // Reseta o formulário e contador de caracteres
         form.reset();
         charCount.textContent = "0/1000 caracteres";
-        alert("Gerenciador de e-mails aberto com os dados preenchidos.");
       }
     });
-    
-
-    // ***** USO FUTURO COM BACKEND ***** 
-    // form.addEventListener("submit", (e) => {
-    //  e.preventDefault();
-    //  if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
-    //    alert("Por favor, preencha todos os campos.");
-    //  } else if (nomeError.style.display === "block" || emailError.style.display === "block") {
-    //    alert("Por favor, corrija os erros antes de enviar.");
-    //  } else {
-    //    alert("Formulário enviado com sucesso!");
-    //    form.reset();
-    //    charCount.textContent = "0/1000 caracteres";
-    //  }
-    // }); 
+  }
+});
