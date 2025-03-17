@@ -4,10 +4,11 @@
   --secondary-color: #2c3e50; /* Cinza ainda mais escuro para o hover do botão */
   --highlight-color: #e52e71; /* Cor de destaque */
   --background-color: #f0f0f0; /* Cinza claro para o fundo geral */
-  --text-color: #fff; /* Texto branco para melhor contraste */
+  --text-color: #333; /* Texto escuro para melhor legibilidade */
   --font-family: 'Poppins', sans-serif; /* Fonte padrão */
   --project-color: #29abe2; /* Exemplo de cor azul clara */
   --dark-text: #333; /* Cor escura para textos em seções claras */
+  --link-color: #007bff; /* Cor para links */
 }
 
 body {
@@ -18,6 +19,55 @@ body {
   padding: 0; /* Remove padding */
   box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
   line-height: 1.6; /* Altura da linha */
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --highlight-color: #e52e71;
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --dark-text: #f0f0f0;
+  --link-color: #66b3ff; /* Cor para links no modo escuro */
+}
+
+/* Estilos para links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: darken(var(--link-color), 15%);
+  text-decoration: underline;
+}
+
+body.dark-mode .header,
+body.dark-mode .header-index,
+body.dark-mode .footer {
+  background-color: var(--primary-color);
+}
+
+body.dark-mode .nav,
+body.dark-mode .nav-links,
+body.dark-mode .nav__link,
+body.dark-mode .footer__info,
+body.dark-mode .footer__social-link {
+  color: var(--text-color);
+}
+
+body.dark-mode .btn,
+body.dark-mode .btn-secondary {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode .btn-secondary:hover {
+  background-color: lighten(var(--highlight-color), 10%);
+  color: var(--text-color);
 }
 
 /* Container principal */
@@ -34,7 +84,7 @@ body {
 .header-index {
   position: relative; /* Posição relativa */
   background: var(--primary-color); /* Cor de fundo */
-  color: white; /* Cor do texto */
+  color: var(--text-color); /* Cor do texto */
   padding: 20px 0; /* Padding */
   height: 50vh; /* Altura reduzida para evitar que fique gigante */
   display: flex; /* Flexbox */
@@ -45,8 +95,15 @@ body {
 /* Ajuste do banner no mobile para index.html */
 @media (max-width: 768px) {
   .header-index {
-    background: url('../assets/Banner_Index.png') no-repeat center center/cover; /* Imagem para mobile */
+    background: url('Home/assets/Banner_Index.png') no-repeat center center/cover; /* Imagem para mobile */
     height: 40vh; /* Reduz ainda mais no mobile */
+  }
+}
+
+/* Ajuste do banner no desktop */
+@media (min-width: 769px) {
+  .header-index {
+    background: url('Home/assets/Banner_Index.png') no-repeat center center/cover; /* Imagem para desktop */
   }
 }
 
@@ -84,6 +141,7 @@ body {
   padding: 30px 20px; /* Padding */
   background: rgba(0, 0, 0, 0.6); /* Fundo levemente transparente */
   border-radius: 0px;
+  color: var(--text-color); /* Cor do texto */
 }
 
 /* Botão hambúrguer (mobile) */
@@ -101,7 +159,7 @@ body {
 .hamburger span {
   width: 30px; /* Largura */
   height: 4px; /* Altura */
-  background: var(--accent-color); /* Cor de fundo */
+  background: var(--highlight-color); /* Cor de fundo */
   margin: 5px 0; /* Margem */
   transition: all 0.3s; /* Transição */
 }
@@ -154,7 +212,7 @@ body {
 .btn-container .cta-btn {
   font-size: 1.2em; /* Tamanho da fonte */
   padding: 10px 20px; /* Padding */
-  background-color: var(--accent-color); /* Cor de destaque */
+  background-color: var(--highlight-color); /* Cor de destaque */
   color: var(--text-color); /* Cor do texto */
   border-radius: 5px; /* Borda arredondada */
   transition: background-color 0.3s; /* Transição */
@@ -168,6 +226,7 @@ body {
 .hero-content {
   text-align: center; /* Alinha texto ao centro */
   z-index: 1; /* Z-index */
+  color: var(--text-color); /* Cor do texto */
 }
 
 .hero-title {
@@ -184,12 +243,12 @@ body {
 }
 
 .title-highlight {
-  color: var(--accent-color); /* Cor de destaque */
+  color: var(--highlight-color); /* Cor de destaque */
 }
 
 .hero-content p {
   font-size: 1.2em; /* Tamanho da fonte */
-  color: #ddd; /* Cor do texto */
+  color: var(--text-color); /* Cor do texto */
   margin-bottom: 30px; /* Margem inferior */
 }
 
@@ -208,15 +267,13 @@ body {
   transition: all 0.3s ease; /* Transição */
   border: none; /* Remove borda */
   cursor: pointer; /* Cursor de ponteiro */
-}
-
-.btn {
-  background-color: var(--accent-color); /* Cor de fundo */
+  background-color: var(--highlight-color); /* Cor de fundo */
   color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto nos botões */
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  background-color: darken(var(--highlight-color), 10%); /* Cor de fundo ao passar o mouse */
 }
 
 .btn-secondary {
@@ -226,21 +283,43 @@ body {
   text-decoration: none; /* Remove sublinhado */
   font-weight: 500; /* Peso da fonte */
   transition: all 0.3s ease; /* Transição */
-  border: 2px solid var(--accent-color); /* Borda */
+  border: 2px solid var(--highlight-color); /* Borda */
   background-color: transparent; /* Fundo transparente */
-  color: var(--accent-color); /* Cor do texto */
+  color: var(--highlight-color); /* Cor do texto */
   cursor: pointer; /* Cursor de ponteiro */
 }
 
 .btn-secondary:hover {
-  background-color: var(--accent-color); /* Cor de fundo ao passar o mouse */
+  background-color: var(--highlight-color); /* Cor de fundo ao passar o mouse */
   color: #fff; /* Cor do texto */
+}
+
+/* Estilos para botões no modo escuro */
+body.dark-mode .btn {
+    background-color: var(--highlight-color);
+    color: #333;
+}
+
+body.dark-mode .btn:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: transparent;
+    color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
 }
 
 /* Rodapé */
 .footer {
   background: var(--primary-color);
-  color: white;
+  color: var(--text-color);
   padding: 20px 0;
   text-align: center; /* Alinha o texto do footer ao centro */
 }
@@ -563,4 +642,24 @@ body {
 
 .text-right {
   text-align: right;
+}
+
+/* Estilos específicos para a página inicial */
+.pagina-inicial {
+  background-color: #d2b48c; /* Cor de fundo amadeirada */
+}
+
+.pagina-inicial h1 {
+  color: #543d2b; /* Cor do texto que combine com o fundo amadeirado */
+}
+
+/* Estilos para a imagem do banner na página inicial */
+.banner-index {
+  width: 100%; /* Garante que a imagem ocupe toda a largura do container */
+  max-width: 1200px; /* Define uma largura máxima para a imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaços extras abaixo da imagem */
+  margin: 20px auto; /* Centraliza a imagem horizontalmente e adiciona margem vertical */
+  border-radius: 10px; /* Arredonda as bordas da imagem */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
 }

@@ -1,6 +1,7 @@
 /* Estilos básicos para o corpo da página */
 body {
     background: linear-gradient(to right, #a8e063, #56ab2f); /* Fundo gradiente verde */
+    color: #333; /* Cor da fonte ajustada para melhor legibilidade */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,7 @@ body {
 /* Estilos para o contêiner principal */
 .container {
     background-color: #ffffff; /* Define a cor de fundo do contêiner */
+    color: #333; /* Cor da fonte ajustada para melhor legibilidade */
     padding: 30px; /* Adiciona espaçamento interno */
     border-radius: 10px; /* Arredonda as bordas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao redor do contêiner */
@@ -37,6 +39,7 @@ textarea {
     font-size: 16px; /* Define o tamanho da fonte */
     resize: none; /* Desabilita o redimensionamento */
     background-color: #e0f7fa; /* Define a cor de fundo da área de texto */
+    color: #333; /* Cor da fonte ajustada para melhor legibilidade */
     box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
@@ -69,7 +72,8 @@ button:hover {
     margin-top: 20px; /* Adiciona espaçamento superior */
     text-align: center; /* Centraliza o texto */
     font-size: 16px; /* Define o tamanho da fonte */
-    color: #00796b; /* Define a cor do texto */
+    color: #3c763d; /* Texto verde escuro */
+    background-color: #dff0d8; /* Fundo verde claro */
     padding: 10px; /* Adiciona espaçamento interno */
     border-radius: 5px; /* Arredonda as bordas */
     font-weight: bold; /* Define o texto em negrito */

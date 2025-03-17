@@ -146,13 +146,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const portfolio = document.getElementById("portfolio");
 
-  // Adiciona um atraso para garantir que a transição seja visível
-  setTimeout(() => {
-    portfolio.classList.add("hidden");
-  }, 3000);
+  if (portfolio) {
+    // Adiciona um atraso para garantir que a transição seja visível
+    setTimeout(() => {
+      portfolio.classList.add("hidden");
+    }, 3000);
 
-  // Remove o elemento do DOM após a transição
-  setTimeout(() => {
-    portfolio.style.display = "none";
-  }, 6000); // Aumentei o tempo para garantir que a transição termine antes de remover o elemento
+    // Remove o elemento do DOM após a transição
+    setTimeout(() => {
+      portfolio.style.display = "none";
+    }, 6000); // Aumentei o tempo para garantir que a transição termine antes de remover o elemento
+  }
+
+  // Função para alternar o banner com base no tamanho da tela
+  function ajustarBanner() {
+    const headerIndex = document.querySelector('.header-index');
+    if (headerIndex) {
+      headerIndex.style.backgroundImage = "url('Home/assets/Banner_Index.png')";
+    }
+  }
+
+  // Chama a função ao carregar a página e ao redimensionar a janela
+  ajustarBanner();
+  window.addEventListener('resize', ajustarBanner);
+
+  // Função para alternar o tema claro e escuro
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+  });
+
+  // Verifica o tema salvo no localStorage
+  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (savedDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
 });
