@@ -3,7 +3,8 @@ body {
   font-family: 'Inter', sans-serif; /* Fonte padrão */
   margin: 0; /* Remove margens externas */
   padding: 0; /* Remove o preenchimento interno */
-  background-color: #f0f8ff; /* Cor de fundo clara */
+  background-color: #f9f9f9; /* fundo branco */
+  color: #333; /* texto preto */
   text-align: center; /* Centraliza o texto */
 }
 
@@ -122,6 +123,12 @@ body {
   background-color: #c82333; /* Cor de fundo mais escura ao passar o mouse */
 }
 
+/* Esquema de cores aprimorado para melhor contraste e experiência amigável */
+header, footer {
+  background-color: #000000; /* fundo preto */
+  color: #ffffff; /* texto branco */
+}
+
 /* Responsividade para telas pequenas */
 @media (max-width: 480px) {
   /* Para telas com largura de até 480px, como smartphones em modo retrato */
@@ -143,4 +150,16 @@ body {
     max-width: 90%; /* Limita a largura do banner a 90% */
     margin: 0 auto; /* Centraliza o banner */
   }
+}
+
+/* Exemplo genérico - ajuste conforme necessário */
+.classe-com-problema {
+  color: #000; /* Cor do texto */
+  background-color: #fff; /* Cor do fundo */
+}
+
+/* Para elementos com fundo escuro */
+.classe-com-fundo-escuro {
+  color: #fff; /* Cor do texto */
+  background-color: #333; /* Cor do fundo */
 }
