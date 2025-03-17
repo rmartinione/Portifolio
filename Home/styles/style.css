@@ -1,19 +1,22 @@
 /* Reset e Estilos Globais */
 :root {
-  --primary-color: #333; /* Cor primária */
-  --secondary-color: #666; /* Cor secundária */
-  --background-color: #f4f4f4; /* Cor de fundo */
-  --accent-color: #ff6600; /* Cor de destaque */
-  --text-color: #fff; /* Cor do texto */
+  --primary-color: #34495e; /* Cinza escuro elegante */
+  --secondary-color: #2c3e50; /* Cinza ainda mais escuro para o hover do botão */
+  --highlight-color: #e52e71; /* Cor de destaque */
+  --background-color: #f0f0f0; /* Cinza claro para o fundo geral */
+  --text-color: #fff; /* Texto branco para melhor contraste */
   --font-family: 'Poppins', sans-serif; /* Fonte padrão */
+  --project-color: #29abe2; /* Exemplo de cor azul clara */
+  --dark-text: #333; /* Cor escura para textos em seções claras */
 }
 
 body {
   font-family: var(--font-family); /* Fonte padrão */
   background-color: var(--background-color); /* Cor de fundo */
-  color: var(--primary-color); /* Cor do texto */
+  color: var(--text-color); /* Cor do texto */
   margin: 0; /* Remove margens */
-  padding: 60px 0 0 0; /* Adiciona 60px de padding-top e mantém os outros valores de padding */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
   line-height: 1.6; /* Altura da linha */
 }
 
@@ -30,12 +33,13 @@ body {
 /*Estilos específicos para a página index.html*/
 .header-index {
   position: relative; /* Posição relativa */
-  background: url('../assets/Banner_Index.png') no-repeat center center/cover; /* Imagem para index.html */
-  height: 70vh; /* Altura reduzida para evitar que fique gigante */
+  background: var(--primary-color); /* Cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 20px 0; /* Padding */
+  height: 50vh; /* Altura reduzida para evitar que fique gigante */
   display: flex; /* Flexbox */
   align-items: center; /* Alinha itens ao centro verticalmente */
   justify-content: center; /* Alinha itens ao centro horizontalmente */
-  color: var(--text-color); /* Cor do texto */
 }
 
 /* Ajuste do banner no mobile para index.html */
@@ -235,32 +239,41 @@ body {
 
 /* Rodapé */
 .footer {
-  background-color: #333; /* Cor de fundo */
-  color: #fff; /* Cor do texto */
-  padding: 20px 0; /* Padding */
-  text-align: center; /* Alinha texto ao centro */
+  background: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center; /* Alinha o texto do footer ao centro */
 }
 
 .footer__container {
-  display: flex; /* Flexbox */
-  flex-direction: column; /* Flexbox em coluna */
-  align-items: center; /* Alinha itens ao centro */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
 }
 
 .footer__socials {
-  display: flex; /* Flexbox */
-  gap: 20px; /* Espaço entre os itens */
-  margin-bottom: 10px; /* Margem inferior */
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px; /* Adiciona um espaço abaixo dos ícones sociais */
 }
 
 .footer__social-link {
   color: #fff; /* Cor do texto */
   text-decoration: none; /* Remove sublinhado */
-  font-size: 1.5em; /* Tamanho da fonte */
+  font-size: 14px; /* Tamanho da fonte */
+  width: 100px; /* Aumenta a largura para 40px */
+  height: 40px; /* Aumenta a altura para 40px */
+}
+
+.footer__social-link img {
+  width: 100px !important; /* Aumenta a largura para 40px */
+  height: 40px !important; /* Aumenta a altura para 40px */
 }
 
 .footer__info {
-  font-size: 0.9em; /* Tamanho da fonte */
+  text-align: center; /* Garante que o texto do footer esteja centralizado */
+  font-size: 12px; /* Tamanho da fonte */
+  text-align: center; /* Garante que o texto do footer esteja centralizado */
 }
 
 .footer-email {
@@ -421,4 +434,133 @@ body {
   border: 1px solid #c3e6cb; 
   border-radius: 5px; 
   margin-top: 1em; 
+}
+
+/* Portfolio */
+.portfolio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 3s ease-in-out;
+  z-index: 1000;
+}
+
+.portfolio.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--primary-color); /* Cor sólida para o fundo */
+    color: var(--text-color);
+    padding: 100px 0;
+    text-align: center;
+    position: relative; /* Important for positioning the particles */
+    overflow: hidden; /* Hides particles that go outside the banner */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(''); /* Substitua por uma imagem de pequenas partículas brancas ou da cor que preferir */
+    opacity: 0.4; /* Adjust the transparency */
+    animation: moveParticles 20s linear infinite; /* Creates the animation */
+}
+
+@keyframes moveParticles {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 0; /* Adjust the distance for the movement */
+    }
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--text-color); /* Garante que o título seja sempre branco */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: var(--text-color); /* Garante que o subtítulo seja sempre branco */
+}
+
+.highlight {
+  color: var(--project-color); /* Altera a cor do destaque para combinar com os projetos */
+}
+
+/* Botões de Chamada para Ação */
+.btn-primary {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: darken(var(--secondary-color), 10%);
+}
+
+/* Introdução */
+.intro {
+  padding: 60px 0;
+  background: var(--background-color);
+  text-align: center;
+  color: var(--dark-text); /* Garante que o texto da introdução seja escuro */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Botões de Chamada para Ação */
+.btn-secondary {
+  background: var(--highlight-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: darken(var(--highlight-color), 10%);
+}
+
+/* Alinhamento de texto */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }

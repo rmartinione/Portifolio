@@ -143,4 +143,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  const portfolio = document.getElementById("portfolio");
+
+  // Adiciona um atraso para garantir que a transição seja visível
+  setTimeout(() => {
+    portfolio.classList.add("hidden");
+  }, 3000);
+
+  // Remove o elemento do DOM após a transição
+  setTimeout(() => {
+    portfolio.style.display = "none";
+  }, 6000); // Aumentei o tempo para garantir que a transição termine antes de remover o elemento
 });
