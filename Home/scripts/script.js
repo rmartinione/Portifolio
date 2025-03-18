@@ -1,186 +1,158 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Seleciona o botão hambúrguer e os links de navegação
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
+document.addEventListener('DOMContentLoaded', () => {
+  /* ===== Alternância de Tema ===== */
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const rootElement = document.documentElement;
 
-  // Função para abrir/fechar o menu
-  const toggleMenu = () => {
-    navLinks.classList.toggle("active");
-    const isActive = navLinks.classList.contains("active");
-    hamburger.setAttribute("aria-expanded", isActive);
-  };
+  if (themeToggleBtn) {
+    const toggleTheme = () => {
+      const currentTheme = rootElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      rootElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    };
 
-  // Função para fechar o menu
-  const closeMenu = () => {
-    navLinks.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
-  };
+    const updateThemeIcon = (theme) => {
+      const icon = themeToggleBtn.querySelector('i');
+      if (icon) {
+        icon.textContent = theme === 'dark' ? 'dark_mode' : 'light_mode';
+      }
+    };
 
-  // Verifica se os elementos existem
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    rootElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
+  /* ===== Menu Hambúrguer ===== */
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav__link');
+
   if (hamburger && navLinks) {
-    // Abre/fecha o menu ao clicar no botão hambúrguer
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation(); // Impede que o clique no hambúrguer feche o menu imediatamente
+    const toggleMenu = () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      const isActive = navLinks.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', isActive);
+      navLinks.setAttribute('aria-hidden', !isActive);
+    };
+
+    const closeMenu = () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navLinks.setAttribute('aria-hidden', 'true');
+    };
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       toggleMenu();
     });
 
-    // Fecha o menu ao clicar fora dele
-    document.addEventListener("click", (e) => {
+    document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         closeMenu();
       }
     });
 
-    // Fecha o menu ao pressionar "Esc"
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
         closeMenu();
       }
     });
+
+    navItems.forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
   }
 
-  // Botões de chamada para ação com animação suave ao clicar
-  const ctaButtons = document.querySelectorAll(".btn-container .cta-btn");
-  ctaButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
+  /* ===== Scroll Suave ===== */
+  const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+  smoothScrollLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(button.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
 
-  // Alternar exibição dos detalhes dos projetos
-  const toggleDetailsButtons = document.querySelectorAll(".toggle-details");
+  /* ===== Botão Voltar ao Topo ===== */
+  const backToTopButton = document.getElementById('back-to-top');
+  if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ===== Formulário de Contato ===== */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const nomeInput = document.getElementById('nome');
+    const emailInput = document.getElementById('email');
+    const mensagemInput = document.getElementById('mensagem');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      if (nomeInput.value.trim() === '') {
+        nomeInput.nextElementSibling.textContent = 'Por favor, insira seu nome.';
+        isValid = false;
+      } else {
+        nomeInput.nextElementSibling.textContent = '';
+      }
+
+      if (!emailInput.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        emailInput.nextElementSibling.textContent = 'Por favor, insira um e-mail válido.';
+        isValid = false;
+      } else {
+        emailInput.nextElementSibling.textContent = '';
+      }
+
+      if (mensagemInput.value.trim() === '') {
+        mensagemInput.nextElementSibling.textContent = 'Por favor, insira sua mensagem.';
+        isValid = false;
+      } else {
+        mensagemInput.nextElementSibling.textContent = '';
+      }
+
+      if (isValid) {
+        contactForm.reset();
+        alert('Formulário enviado com sucesso!');
+      }
+    });
+  }
+
+  /* ===== Botões "Saiba Mais" ===== */
+  const toggleDetailsButtons = document.querySelectorAll('.toggle-details');
   toggleDetailsButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const projectCard = button.closest(".project-card");
-      projectCard.classList.toggle("active");
+    button.addEventListener('click', () => {
+      const projectCard = button.closest('.project-card');
+      projectCard.classList.toggle('active');
     });
   });
 
-  // Validação do formulário de contato
-  const form = document.getElementById("contact-form");
-  const nome = document.getElementById("nome");
-  const email = document.getElementById("email");
-  const mensagem = document.getElementById("mensagem");
-  const nomeError = document.getElementById("nomeError");
-  const emailError = document.getElementById("emailError");
-  const charCount = document.getElementById("charCount");
-
-  const showPopupMessage = (message) => {
-    const popup = document.createElement("div");
-    popup.className = "success-message";
-    popup.textContent = message;
-
-    // Adiciona o popup após o formulário
-    form.parentElement.appendChild(popup);
-
-    // Remove o popup automaticamente após 5 segundos
+  /* ===== Animação de Digitação ===== */
+  const terminalLines = document.querySelectorAll('.terminal-line');
+  terminalLines.forEach((line, index) => {
+    line.style.opacity = '0';
     setTimeout(() => {
-      popup.remove();
-    }, 5000);
-  };
-
-  if (form) {
-    nome.addEventListener("input", () => {
-      const nomeValue = nome.value.trim();
-      if (/[^a-zA-Z\s]/.test(nomeValue)) {
-        nomeError.textContent = "Nome inválido. Use apenas letras e espaços.";
-        nomeError.style.display = "block";
-      } else {
-        nomeError.style.display = "none";
-      }
-    });
-
-    email.addEventListener("input", () => {
-      const emailValue = email.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-        emailError.textContent = "E-mail inválido. Verifique o formato.";
-        emailError.style.display = "block";
-      } else {
-        emailError.style.display = "none";
-      }
-    });
-
-    mensagem.addEventListener("input", () => {
-      const mensagemValue = mensagem.value.trim();
-      charCount.textContent = `${mensagemValue.length}/1000 caracteres`;
-      if (mensagemValue.length > 1000) {
-        mensagem.setCustomValidity("A mensagem não pode exceder 1000 caracteres.");
-      } else {
-        mensagem.setCustomValidity("");
-      }
-    });
-
-    // Envio do formulário para abrir o gerenciador de e-mails
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
-        alert("Por favor, preencha todos os campos.");
-      } else if (nomeError.style.display === "block" || emailError.style.display === "block") {
-        alert("Por favor, corrija os erros antes de enviar.");
-      } else {
-        // Cria o link mailto
-        const mailtoLink = `mailto:rm_corporate@hotmail.com?subject=Contato de ${encodeURIComponent(
-          nome.value
-        )}&body=Nome: ${encodeURIComponent(nome.value)}%0AEmail: ${encodeURIComponent(
-          email.value
-        )}%0AMensagem: ${encodeURIComponent(mensagem.value)}`;
-
-        // Abre o gerenciador de e-mails do usuário
-        window.location.href = mailtoLink;
-
-        // Exibe mensagem de confirmação com popup
-        showPopupMessage(
-          "Formulário enviado com sucesso! Por gentileza, finalize o envio no Gerenciador de e-mails."
-        );
-
-        // Reseta o formulário e contador de caracteres
-        form.reset();
-        charCount.textContent = "0/1000 caracteres";
-      }
-    });
-  }
-
-  const portfolio = document.getElementById("portfolio");
-
-  if (portfolio) {
-    // Adiciona um atraso para garantir que a transição seja visível
-    setTimeout(() => {
-      portfolio.classList.add("hidden");
-    }, 3000);
-
-    // Remove o elemento do DOM após a transição
-    setTimeout(() => {
-      portfolio.style.display = "none";
-    }, 6000); // Aumentei o tempo para garantir que a transição termine antes de remover o elemento
-  }
-
-  // Função para alternar o banner com base no tamanho da tela
-  function ajustarBanner() {
-    const headerIndex = document.querySelector('.header-index');
-    if (headerIndex) {
-      headerIndex.style.backgroundImage = "url('Home/assets/Banner_Index.png')";
-    }
-  }
-
-  // Chama a função ao carregar a página e ao redimensionar a janela
-  ajustarBanner();
-  window.addEventListener('resize', ajustarBanner);
-
-  // Função para alternar o tema claro e escuro
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
+      line.style.opacity = '1';
+      line.style.transition = 'opacity 0.5s ease-in-out';
+    }, index * 1500);
   });
-
-  // Verifica o tema salvo no localStorage
-  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-  if (savedDarkMode) {
-    document.body.classList.add('dark-mode');
-  }
 });

@@ -10,78 +10,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="Projetos/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body>
-
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <!-- Menu de três linhas para dispositivos móveis -->
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-links" id="nav-links">
-                    <a href="..\..\..\index.html" class="nav__link"><i class="material-icons">home</i> Início</a>
-                    <a href="../sobre/sobre.html" class="nav__link"><i class="material-icons">info</i> Sobre</a>
-                    <a href="../skills/skills.html" class="nav__link"><i class="material-icons">build</i> Habilidades</a>
-                    <a href="../projetos/projetos.html" class="nav__link"><i class="material-icons">code</i> Projetos</a>
+<body class="terminal-theme">
+    <div class="background-gradient"></div>
+    <div class="computer">
+        <div class="computer-screen">
+            <button class="power-button" aria-label="Desligar" onclick="location.href='https://www.google.com'">
+                <span>⏻</span>
+            </button>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-title">Contato</span>
                 </div>
-                <div class="theme-toggle">
-                    <button id="theme-toggle-btn" aria-label="Toggle theme">
-                        <i class="material-icons">brightness_6</i>
-                    </button>
+                <div class="terminal-body">
+                    <p class="terminal-line">C:\> Entre em contato para discutirmos como posso ajudar no seu projeto.</p>
+                    <p class="terminal-line">C:\> Se você deseja saber mais sobre meus projetos, colaborar em algum desenvolvimento ou simplesmente trocar ideias sobre tecnologia, estou à disposição!</p>
+                    <p class="terminal-line">C:\> Preencha o formulário abaixo e responderei o mais breve possível.</p>
+                    <form class="contact-form" id="contact-form">
+                        <fieldset>
+                            <legend>Informações de Contato</legend>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                            <small class="error-message"></small>
+
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                            <small class="error-message"></small>
+
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite aqui sua mensagem" required></textarea>
+                            <small id="charCount">0/1000 caracteres</small>
+                        </fieldset>
+                        <button type="submit" class="btn-primary">Enviar</button>
+                    </form>
+                    <button class="back-button" onclick="location.href='../../../index.html'">Voltar</button>
                 </div>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- Conteúdo Principal -->
-    <main id="contato">
-        <div class="container">
-            <h2><center>Entre em Contato</center></h2><br>
-            <p>Se você deseja saber mais sobre meus projetos, colaborar em algum desenvolvimento ou simplesmente trocar ideias sobre tecnologia, estou à disposição!</p>
-            <p>Preencha o formulário abaixo e responderei o mais breve possível.</p><br>
-            <form class="contact-form" id="contact-form">
-                <fieldset>
-                    <legend>Informações de Contato</legend>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome " required>
-                    <small id="nomeError" class="error-message"></small>
-
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-                    <small id="emailError" class="error-message"></small>
-
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite aqui sua mensagem" required></textarea>
-                    <small id="charCount">0/1000 caracteres</small>
-                </fieldset>
-                <button type="submit" class="btn">Enviar</button>
-            </form>
-        </div>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container footer__container">
-            <div class="footer__socials">
-                <a href="https://www.linkedin.com/in/rafael-martiniano" target="_blank" class="footer__social-link" aria-label="LinkedIn">
-                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/rmartinione" target="_blank" class="footer__social-link" aria-label="GitHub">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-                </a>
-            </div>
-            <div class="footer__info">
-                <p>© 2025 - Rafael Martiniano.<br> Todos os direitos reservados.</p>
-                <p>Criado com muito ☕ e código.</p>
             </div>
         </div>
-    </footer>
+        <div class="computer-base"></div>
+        <div class="computer-keyboard"></div>
+        <div class="computer-mouse"></div>
+    </div>
     <script src="../../scripts/script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('input', (e) => {
+            const input = e.target;
+            const errorMessage = input.nextElementSibling;
+            if (input.validity.valid) {
+                errorMessage.textContent = '';
+            } else {
+                errorMessage.textContent = 'Por favor, preencha este campo corretamente.';
+            }
+        });
+    </script>
 </body>
 </html>

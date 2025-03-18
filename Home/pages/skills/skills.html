@@ -12,76 +12,37 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body>
-
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <!-- Menu de três linhas para dispositivos móveis -->
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-links" id="nav-links">
-                    <a href="..\..\..\index.html" class="nav__link"><i class="material-icons">home</i> Início</a>
-                    <a href="../sobre/sobre.html" class="nav__link"><i class="material-icons">info</i> Sobre</a>
-                    <a href="../projetos/projetos.html" class="nav__link"><i class="material-icons">code</i> Projetos</a>
-                    <a href="../contact/contact.html" class="nav__link"><i class="material-icons">mail</i> Contato</a>
+<body class="terminal-theme">
+    <div class="background-gradient"></div>
+    <div class="computer">
+        <div class="computer-screen">
+            <button class="power-button" aria-label="Desligar" onclick="location.href='https://www.google.com'">
+                <span>⏻</span>
+            </button>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-title">Habilidades</span>
                 </div>
-                <div class="theme-toggle">
-                    <button id="theme-toggle-btn" aria-label="Toggle theme">
-                        <i class="material-icons">brightness_6</i>
-                    </button>
+                <div class="terminal-body">
+                    <p class="terminal-line">C:\> Atualmente, estou aprofundando meus conhecimentos em Desenvolvimento Front-End, com foco nas seguintes tecnologias:</p>
+                    <p class="terminal-line">C:\> JavaScript</p>
+                    <p class="terminal-line">C:\> HTML5</p>
+                    <p class="terminal-line">C:\> CSS3</p>
+                    <p class="terminal-line">C:\> Além disso, estou praticando as melhores práticas em controle de versão com Git e GitHub.</p>
+                    <p class="terminal-line">C:\>📚 Conhecimentos Adquiridos</p>
+                    <div class="terminal-links">
+                        <a href="../sobre/sobre.html" class="btn-terminal">Sobre Mim</a>
+                        <a href="../projetos/projetos.html" class="btn-terminal">Ver Projetos</a>
+                        <a href="../contact/contact.html" class="btn-terminal">Entre em Contato</a>
+                    </div>
+                    <button class="back-button" onclick="location.href='../../../index.html'">Voltar</button>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Conteúdo Principal -->
-    <main>
-        <section id="conhecimentos" class="section">
-            <div class="container">
-                <h2><center>📚 Conhecimentos Adquiridos</center></h2>
-                <p>Atualmente, estou aprofundando meus conhecimentos em Desenvolvimento Front-End, com foco nas seguintes tecnologias:</p>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                </ul>
-                <p>Além disso, estou praticando as melhores práticas em controle de versão com Git e uso de GitHub para o gerenciamento de repositórios remotos.</p>
-                <div class="badges"><br>
-                    <center><img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-                    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-                    <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-                    <a href="https://rmartinione.github.io/Challenge-AluraOne">
-                        <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-                    </a>
-                    <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git"></center><br>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container footer__container">
-            <div class="footer__socials">
-                <a href="https://www.linkedin.com/in/rafael-martiniano" target="_blank" class="footer__social-link" aria-label="LinkedIn">
-                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/rmartinione" target="_blank" class="footer__social-link" aria-label="GitHub">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-                </a>
-            </div>
-            <div class="footer__info">
-                <p>© 2025 - Rafael Martiniano.<br> Todos os direitos reservados.</p>
-                <p>Criado com muito ☕ e código.</p>
             </div>
         </div>
-    </footer>
-
+        <div class="computer-base"></div>
+        <div class="computer-keyboard"></div>
+        <div class="computer-mouse"></div>
+    </div>
     <script src="../../scripts/script.js"></script>
 </body>
 </html>
