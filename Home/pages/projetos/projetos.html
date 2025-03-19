@@ -29,14 +29,26 @@
           <p class="terminal-line">C:\> Desenvolvido no curso ONE - Em parceria com a Alura</p>
           <p class="terminal-line">C:\> <a href="https://rmartinione.github.io/Challenge-AluraOne/challenge-amigo-secreto/index.html" target="_blank">Challenge Amigo Secreto (Projeto One + Alura)</a></p>
           <p class="terminal-line">C:\> <a href="https://rmartinione.github.io/Challenge-AluraOne/7daysofcode/index.html" target="_blank">7 Days of Code (Comunidade Alura)</a></p>
-          
+          <p class="terminal-line">C:\> Primeiro projeto desenvolvido de forma autonoma</p>
+          <p class="terminal-line">C:\> <a href="https://rmartinione.github.io/qrcode/" target="_blank">Gerador de QRCode (Comunidade Alura)</a></p>
+
           <!-- Adicionando a seção de Projetos em Breve -->
           <p class="terminal-line">C:\> Projetos em Breve:</p>
           <p class="terminal-line">C:\> Gerador de Documentos <span class="in-construction">[Em Construção]</span></p>
           <p class="terminal-line">C:\> Organizador de Texto <span class="in-construction">[Em Construção]</span></p>
-          <p class="terminal-line">C:\> Gerador de QRCode <span class="in-construction">[Em Construção]</span></p>
           <p class="terminal-line">C:\> Validador de Links <span class="in-construction">[Em Construção]</span></p>
           
+          <!-- Adicionando seletor de tamanho -->
+          <p class="terminal-line">C:\> Escolha o tamanho:</p>
+          <select id="size-selector" class="terminal-line">
+            <option value="default">Padrão</option>
+            <option value="custom">Tamanho Personalizado</option>
+          </select>
+          <div id="custom-size-fields" style="display: none;">
+            <p class="terminal-line">C:\> Largura: <input type="number" id="custom-width" placeholder="Largura"></p>
+            <p class="terminal-line">C:\> Altura: <input type="number" id="custom-height" placeholder="Altura"></p>
+          </div>
+
           <div class="terminal-links">
             <a href="../sobre/sobre.html" class="btn-terminal">Sobre Mim</a>
             <a href="../skills/skills.html" class="btn-terminal">Ver Habilidades</a>
@@ -48,6 +60,17 @@
     </div>
   </div>
   <script src="../../scripts/script.js"></script>
+  <script>
+    // Mostrar campos de largura e altura apenas para "Tamanho Personalizado"
+    document.getElementById('size-selector').addEventListener('change', function () {
+      const customSizeFields = document.getElementById('custom-size-fields');
+      if (this.value === 'custom') {
+        customSizeFields.style.display = 'block';
+      } else {
+        customSizeFields.style.display = 'none';
+      }
+    });
+  </script>
   <style>
     .project-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
