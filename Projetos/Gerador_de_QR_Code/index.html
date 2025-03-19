@@ -33,7 +33,7 @@
         <option value="custom">Tamanho Personalizado</option>
       </select>
       
-      <div class="custom-size-container" id="customSizeContainer">
+      <div class="custom-size-container" id="customSizeContainer" style="display: none;">
         <input type="number" id="customWidth" placeholder="Largura (px)" min="100" max="1000">
         <input type="number" id="customHeight" placeholder="Altura (px)" min="100" max="1000">
       </div>
@@ -72,5 +72,15 @@
 
   <script src="./scripts/utils.js"></script>
   <script src="./scripts/main.js"></script>
+  <script>
+    function toggleCustomSize(value) {
+      const customSizeContainer = document.getElementById("customSizeContainer");
+      if (value === "custom") {
+        customSizeContainer.style.display = "flex";
+      } else {
+        customSizeContainer.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
