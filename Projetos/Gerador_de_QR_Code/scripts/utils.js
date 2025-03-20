@@ -52,3 +52,8 @@ async function encurtarLinkTinyURL(link) {
         document.getElementById("linkEncurtado").innerText = `Erro ao encurtar URL: ${error.message}`;
     }
 }
+
+function toggleCustomSize(value) {
+    const customSizeContainer = document.getElementById("customSizeContainer");
+    customSizeContainer.style.display = value === "custom" ? "block" : "none";
+}
